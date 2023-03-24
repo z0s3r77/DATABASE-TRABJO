@@ -37,19 +37,19 @@ VALUES (5, 'davidsmith', 'david123', 'davidsmith@example.com', '2022-05-20');
 -- Scores table
 
 INSERT INTO Scores (id, user_id, game_id, score, date)
-VALUES (1, 1, 1, 1000, '2022-03-01');
+VALUES (1, 1, 1, 100, '2022-03-01');
 
 INSERT INTO Scores (id, user_id, game_id, score, date)
-VALUES (2, 1, 2, 5000, '2022-03-15');
+VALUES (2, 1, 2, 50, '2022-03-15');
 
 INSERT INTO Scores (id, user_id, game_id, score, date)
-VALUES (3, 2, 1, 2000, '2022-04-02');
+VALUES (3, 2, 1, 25, '2022-04-02');
 
 INSERT INTO Scores (id, user_id, game_id, score, date)
-VALUES (4, 3, 3, 3500, '2022-05-01');
+VALUES (4, 3, 3, 75, '2022-05-01');
 
 INSERT INTO Scores (id, user_id, game_id, score, date)
-VALUES (5, 4, 4, 800, '2022-05-15');
+VALUES (5, 4, 4, 0, '2022-05-15');
 
 
 -- Sales table
