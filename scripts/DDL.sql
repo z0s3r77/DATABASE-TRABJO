@@ -50,7 +50,7 @@ CREATE TABLE Developers (
 	id INT,
 	name VARCHAR(60),
 	description VARCHAR(60),
-	founding_date DATE,
+	foundation_date DATE,
 	location VARCHAR(60),
 	PRIMARY KEY (id) 
 );
@@ -59,7 +59,7 @@ CREATE TABLE Studios (
 	id INT ,
 	name VARCHAR(60),
 	description VARCHAR(60),
-	founding_date DATE,
+	foundation_date DATE,
 	location VARCHAR(60),
 	PRIMARY KEY (id) 
 );

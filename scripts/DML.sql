@@ -34,48 +34,40 @@ INSERT INTO Users (id, username, password, email, registration_date)
 VALUES (5, 'davidsmith', 'david123', 'davidsmith@example.com', '2022-05-20');
 
 
--- scores table
+-- Scores table
 
-INSERT INTO scores (id, user_id, game_id, score, date)
+INSERT INTO Scores (id, user_id, game_id, score, date)
 VALUES (1, 1, 1, 1000, '2022-03-01');
 
-INSERT INTO scores (id, user_id, game_id, score, date)
+INSERT INTO Scores (id, user_id, game_id, score, date)
 VALUES (2, 1, 2, 5000, '2022-03-15');
 
-INSERT INTO scores (id, user_id, game_id, score, date)
+INSERT INTO Scores (id, user_id, game_id, score, date)
 VALUES (3, 2, 1, 2000, '2022-04-02');
 
-INSERT INTO scores (id, user_id, game_id, score, date)
+INSERT INTO Scores (id, user_id, game_id, score, date)
 VALUES (4, 3, 3, 3500, '2022-05-01');
 
-INSERT INTO scores (id, user_id, game_id, score, date)
+INSERT INTO Scores (id, user_id, game_id, score, date)
 VALUES (5, 4, 4, 800, '2022-05-15');
 
 
 -- Sales table
 
-INSERT INTO Purchases (user_id, game_id, purchase_date, price)
-VALUES (1, 2, '2022-01-20', 49.99);
-INSERT INTO Purchases (user_id, game_id, purchase_date, price)
-VALUES (2, 3, '2022-02-25', 29.99);
-INSERT INTO Purchases (user_id, game_id, purchase_date, price)
-VALUES (3, 1, '2022-03-15', 59.99);
-INSERT INTO Purchases (user_id, game_id, purchase_date, price)
-VALUES (4, 2, '2022-04-10', 49.99);
-INSERT INTO Purchases (user_id, game_id, purchase_date, price)
-VALUES (5, 3, '2022-05-05', 29.99);
+INSERT INTO Purchases (id, user_id, game_id, purchase_date, price)
+VALUES (1,1, 2, '2022-01-20', 49.99);
+INSERT INTO Purchases (id, user_id, game_id, purchase_date, price)
+VALUES (2,2, 3, '2022-02-25', 29.99);
+INSERT INTO Purchases (id, user_id, game_id, purchase_date, price)
+VALUES (3,3, 1, '2022-03-15', 59.99);
+INSERT INTO Purchases (id, user_id, game_id, purchase_date, price)
+VALUES (4,4, 2, '2022-04-10', 49.99);
+INSERT INTO Purchases (id, user_id, game_id, purchase_date, price)
+VALUES (5,5, 3, '2022-05-05', 29.99);
 
 
-INSERT INTO Developers (name, description, foundation_date, location)
-VALUES ('Rockstar Games', 'A video game developer and publisher based in New York City.', '1998-12-01', 'New York, USA');
-INSERT INTO Developers (name, description, foundation_date, location)
-VALUES ('Ubisoft', 'A French video game company headquartered in Montreuil.', '1986-03-01', 'Montreuil, France');
-INSERT INTO Developers (name, description, foundation_date, location)
-VALUES ('Naughty Dog', 'An American video game developer based in Santa Monica, California.', '1984-09-01', 'Santa Monica, USA');
-INSERT INTO Developers (name, description, foundation_date, location)
-VALUES ('Bethesda Game Studios', 'An American video game developer and a division of Bethesda Softworks based in Rockville, Maryland.', '2001-01-01', 'Rockville, USA');
-INSERT INTO Developers (name, description, foundation_date, location)
-VALUES ('Capcom', 'A Japanese video game developer and publisher.', '1979-06-01', 'Osaka, Japan');
+
+
 INSERT INTO Developers (id, name, description, foundation_date, location)
 VALUES 
 (1, 'Rockstar North', 'A Scottish video game developer and a studio of Rockstar Games', '1988-01-01', 'Edinburgh, Scotland'),
@@ -94,13 +86,24 @@ VALUES
 (5, 'Capcom', 'A Japanese video game developer and publisher', '1979-06-11', 'Osaka, Japan');
 
 
-INSERT INTO Game_Developer_Relationship (game_id, developer_id)
+INSERT INTO GamesDevelopers (game_id, developer_id)
 VALUES
 (1, 1),
 (2, 2),
 (3, 3),
 (4, 4),
 (5, 5);
+
+
+INSERT INTO GamesStudios (game_id, developer_id)
+VALUES
+(1, 1),
+(2, 2),
+(3, 3),
+(4, 4),
+(5, 5);
+
+
 
 INSERT INTO Sales (id, game_id, sale_date, revenue)
 VALUES 
