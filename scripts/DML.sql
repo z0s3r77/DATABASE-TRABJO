@@ -7,13 +7,13 @@ INSERT INTO Games (id, name, description, release_date, platform)
 VALUES (2, 'The Legend of Zelda: Ocarina of Time', 'A popular adventure game', '1998-11-23', 'Nintendo 64');
 
 INSERT INTO Games (id, name, description, release_date, platform)
-VALUES (3, 'Grand Theft Auto V', 'An open-world action game', '2013-09-17', 'PlayStation 3, Xbox 360');
+VALUES (3, 'Grand Theft Auto V', 'An open-world action game', '2013-09-17', 'PlayStation 3');
 
 INSERT INTO Games (id, name, description, release_date, platform)
 VALUES (4, 'Minecraft', 'A sandbox survival game', '2011-11-18', 'PC');
 
 INSERT INTO Games (id, name, description, release_date, platform)
-VALUES (5, 'Fortnite', 'A popular battle royale game', '2017-07-25', 'PC, Xbox One, PlayStation 4, Nintendo Switch, iOS, Android');
+VALUES (5, 'Fortnite', 'A popular battle royale game', '2017-07-25', 'PlayStation 4');
 
 
 -- Users table
