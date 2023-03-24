@@ -28,7 +28,7 @@ CREATE TABLE Scores (
 	id INT ,
 	user_id INT,
 	game_id INT,
-	score INT,
+	score INT CHECK (score >= 0 AND score <= 100),
 	date DATE,
 	PRIMARY KEY (id),
 	FOREIGN KEY (user_id) REFERENCES Users(id),
