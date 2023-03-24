@@ -95,7 +95,7 @@ VALUES
 (5, 5);
 
 
-INSERT INTO GamesStudios (game_id, developer_id)
+INSERT INTO GamesStudios (game_id, studio_id)
 VALUES
 (1, 1),
 (2, 2),
