@@ -32,8 +32,8 @@ CREATE TABLE Scores (
 	score INT CHECK (score >= 0 AND score <= 100),
 	date DATE,
 	PRIMARY KEY (id),
-	FOREIGN KEY (user_id) REFERENCES Users(id),
-	FOREIGN KEY (game_id) REFERENCES Games(id)
+	FOREIGN KEY (user_id) REFERENCES Users(id) ON DELETE CASCADE ON UPDATE CASCADE,
+	FOREIGN KEY (game_id) REFERENCES Games(id) ON DELETE CASCADE ON UPDATE CASCADE
 );
 
 CREATE TABLE Purchases (
@@ -43,8 +43,8 @@ CREATE TABLE Purchases (
 	purchase_date DATE,
 	price DECIMAL(10, 2),
 	PRIMARY KEY (id), 
-	FOREIGN KEY (user_id) REFERENCES Users(id),
-	FOREIGN KEY (game_id) REFERENCES Games(id)
+	FOREIGN KEY (user_id) REFERENCES Users(id) ON DELETE SET NULL ON UPDATE SET NULL,
+	FOREIGN KEY (game_id) REFERENCES Games(id) ON DELETE SET NULL ON UPDATE SET NULL
 );
 
 CREATE TABLE Developers (
@@ -69,16 +69,16 @@ CREATE TABLE GamesDevelopers (
 	game_id INT,
 	developer_id INT,
 	PRIMARY KEY (game_id, developer_id),
-	FOREIGN KEY (game_id) REFERENCES Games(id),
-	FOREIGN KEY (developer_id) REFERENCES Developers(id)
+	FOREIGN KEY (game_id) REFERENCES Games(id) ON DELETE CASCADE ON UPDATE CASCADE,
+	FOREIGN KEY (developer_id) REFERENCES Developers(id) ON DELETE CASCADE ON UPDATE CASCADE
 );
 
 CREATE TABLE GamesStudios (
 	game_id INT,
 	studio_id INT,
 	PRIMARY KEY (game_id, studio_id),
-	FOREIGN KEY (game_id) REFERENCES Games(id),
-	FOREIGN KEY (studio_id) REFERENCES Studios(id)
+	FOREIGN KEY (game_id) REFERENCES Games(id) ON DELETE CASCADE ON UPDATE CASCADE,
+	FOREIGN KEY (studio_id) REFERENCES Studios(id) ON DELETE CASCADE ON UPDATE CASCADE
 );
 
 CREATE TABLE Sales (
@@ -87,5 +87,5 @@ CREATE TABLE Sales (
 	sale_date DATE,
 	revenue DECIMAL(10, 2),
 	PRIMARY KEY (id),
-	FOREIGN KEY (game_id) REFERENCES Games(id)
+	FOREIGN KEY (game_id) REFERENCES Games(id) ON DELETE SET NULL ON UPDATE SET NULL
 );
