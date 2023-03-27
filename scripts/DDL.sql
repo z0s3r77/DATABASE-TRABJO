@@ -98,18 +98,23 @@ CREATE INDEX userGameDate__index on Purchases(user_id,game_id,purchase_date);
 
 -- ROLES
 
+DROP ROLE IF EXISTS 'writer' ;
 CREATE ROLE 'writer';
 GRANT INSERT ON epicgames.* TO 'writer';
 
+DROP ROLE IF EXISTS 'reader' ;
 CREATE ROLE 'reader';
 GRANT SELECT ON epicgames.* TO 'reader';
 
 -- CREATE USERS 
 
+DROP USER IF EXISTS 'admin_user'@'localhost' ;
 CREATE USER 'admin_user'@'localhost' IDENTIFIED BY 'mystrongpass1';
 
+DROP USER IF EXISTS 'writer_user'@'localhost' ;
 CREATE USER 'writer_user'@'localhost' IDENTIFIED BY 'mystrongpass2';
 
+DROP USER IF EXISTS 'reader_user'@'localhost' ;
 CREATE USER 'reader_user'@'localhost' IDENTIFIED BY 'mystrongpass3';
 
 
