@@ -85,7 +85,12 @@ CREATE TABLE Sales (
 	id INT ,
 	game_id INT,
 	sale_date DATE,
+	sale_hour Time,
 	revenue DECIMAL(10, 2),
 	PRIMARY KEY (id),
 	FOREIGN KEY (game_id) REFERENCES Games(id) ON DELETE SET NULL ON UPDATE SET NULL
 );
+
+
+CREATE INDEX scoreUser__index on Scores(score,user_id);
+CREATE INDEX userGameDate__index on Purchases(user_id,game_id,purchase_date);

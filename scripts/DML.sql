@@ -52,7 +52,7 @@ INSERT INTO Scores (id, user_id, game_id, score, date)
 VALUES (5, 4, 4, 0, '2022-05-15');
 
 
--- Sales table
+-- Purchases table
 
 INSERT INTO Purchases (id, user_id, game_id, purchase_date, price)
 VALUES (1,1, 2, '2022-01-20', 49.99);
@@ -110,10 +110,12 @@ VALUES
 
 -- Sales table
 
-INSERT INTO Sales (id, game_id, sale_date, revenue)
+INSERT INTO Sales (id, game_id, sale_date, sale_hour,revenue)
 VALUES 
-(1, 1, '2022-01-01', 500000),
-(2, 2, '2022-02-01', 750000),
-(3, 3, '2022-03-01', 1000000),
-(4, 4, '2022-04-01', 1250000),
-(5, 5, '2022-05-01', 1500000);
+(1, 1, '2022-01-01', '9:00:00', 500000),
+(2, 2, '2022-02-01', '10:00:00', 750000),
+(3, 3, '2022-03-01', '11:00:00', 1000000),
+(4, 4, '2022-04-01', '12:00:00', 1250000),
+(5, 5, '2022-05-01', '20:00:00', 1500000);
+
+
