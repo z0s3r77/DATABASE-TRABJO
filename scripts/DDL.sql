@@ -18,7 +18,7 @@ CREATE TABLE Games (
 
 CREATE TABLE Users (
 	id INT,
-	username VARCHAR(60),
+	username VARCHAR(60) UNIQUE,
 	password VARCHAR(60),
 	email VARCHAR(60),
 	registration_date DATE,
