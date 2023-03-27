@@ -121,3 +121,6 @@ GRANT 'writer' TO 'writer_user'@'localhost';
 
 GRANT 'reader' TO 'reader_user'@'localhost';
 
+-- TO GRANT AN EXTERNAL USER AND ALL PRIVILEGES
+
+-- CREATE USER [USERNAME]@[IPDIRECTION] IDENTIFIED BY '[PASSWORD]'; --> WITH '%' ALL IPS INCLUDED
