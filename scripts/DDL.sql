@@ -91,6 +91,33 @@ CREATE TABLE Sales (
 	FOREIGN KEY (game_id) REFERENCES Games(id) ON DELETE SET NULL ON UPDATE SET NULL
 );
 
+-- INDEX
 
 CREATE INDEX scoreUser__index on Scores(score,user_id);
 CREATE INDEX userGameDate__index on Purchases(user_id,game_id,purchase_date);
+
+-- ROLES
+
+CREATE ROLE 'writer';
+GRANT INSERT ON epicgames.* TO 'writer';
+
+CREATE ROLE 'reader';
+GRANT SELECT ON epicgames.* TO 'reader';
+
+-- CREATE USERS 
+
+CREATE USER 'admin_user'@'localhost' IDENTIFIED BY 'mystrongpass1';
+
+CREATE USER 'writer_user'@'localhost' IDENTIFIED BY 'mystrongpass2';
+
+CREATE USER 'reader_user'@'localhost' IDENTIFIED BY 'mystrongpass3';
+
+
+-- ASIGN ROLE TO USER
+
+GRANT ALL PRIVILEGES ON *.* TO 'admin_user'@'localhost' WITH GRANT OPTION;
+
+GRANT 'writer' TO 'writer_user'@'localhost';
+
+GRANT 'reader' TO 'reader_user'@'localhost';
+
