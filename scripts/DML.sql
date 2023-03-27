@@ -66,7 +66,7 @@ INSERT INTO Purchases (id, user_id, game_id, purchase_date, price)
 VALUES (5,5, 3, '2022-05-05', 29.99);
 
 
-
+-- Developers table
 
 INSERT INTO Developers (id, name, description, foundation_date, location)
 VALUES 
@@ -77,6 +77,8 @@ VALUES
 (5, 'Ubisoft Montreal', 'A Canadian video game developer and a subsidiary of Ubisoft', '1997-01-01', 'Montreal, Canada');
 
 
+-- Studios table
+
 INSERT INTO Studios (id, name, description, foundation_date, location)
 VALUES 
 (1, 'Blizzard Entertainment', 'An American video game developer and publisher', '1991-02-08', 'Irvine, California'),
@@ -86,6 +88,8 @@ VALUES
 (5, 'Capcom', 'A Japanese video game developer and publisher', '1979-06-11', 'Osaka, Japan');
 
 
+-- GamesDevelopers table
+
 INSERT INTO GamesDevelopers (game_id, developer_id)
 VALUES
 (1, 1),
@@ -94,6 +98,7 @@ VALUES
 (4, 4),
 (5, 5);
 
+-- GamesStudios table
 
 INSERT INTO GamesStudios (game_id, studio_id)
 VALUES
@@ -103,7 +108,7 @@ VALUES
 (4, 4),
 (5, 5);
 
-
+-- Sales table
 
 INSERT INTO Sales (id, game_id, sale_date, revenue)
 VALUES 
