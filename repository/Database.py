@@ -16,13 +16,15 @@ class Database:
             database="epicgames",
         )
 
-        # Crear un cursor para ejecutar las consultas SQL
         return conexion
 
     @staticmethod
     def insertar_usuario():
 
+        # "Instanciar" la conexión
         conexion = Database.connect()
+
+        # Crear un cursor
         cursor = conexion.cursor()
 
         # Obtener los datos del formulario
@@ -53,12 +55,17 @@ class Database:
     @staticmethod
     def get_imagen(id):
 
+        # "Instanciar" la conexión
         conexion = Database.connect()
+
+        # Crear un cursor
         cursor = conexion.cursor()
 
+        # Crear una consulta
         consulta = "SELECT * FROM Games WHERE id = %s"
-        valores = (id,)
+        valores = [id]
 
+        # Ejecutar la consulta y guardamos el valor de la consulta
         cursor.execute(consulta, valores)
         resultado = cursor.fetchone()
 
