@@ -1,23 +1,37 @@
-<h1> Insertar juego a la DB </h1>
-<form action="#" method="post" enctype="multipart/form-data">
-  <label for="id">id:</label>
-  <input type="text" id="id" name="id" required><br>
+<!DOCTYPE html>
+<html lang="en">
 
-  <label for="name">Name: </label>
-  <input type="text" id="name" name="name" required><br>
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="{{ url_for('static', filename='base.css') }}" rel="stylesheet" type="text/css">
+  <title>Insertar Juego</title>
+</head>
 
-  <label for="description">Description: </label>
-  <input type="text" id="description" name="description" required><br>
+<body>
+  <h1> Insertar juego a la DB </h1>
+  <form action="#" method="post" enctype="multipart/form-data">
+    <label for="id">Id:</label>
+    <input type="text" id="id" name="id" required>
 
-  <label for="releasedate">Release Date: </label>
-  <input type="date" id="releasedate" name="releasedate" required><br>
+    <label for="name">Name: </label>
+    <input type="text" id="name" name="name" required>
 
-  <label for="platform">Platform: </label>
-  <input type="text" id="platform" name="platform" required><br>
+    <label for="description">Description: </label>
+    <input type="text" id="description" name="description" required>
 
-  <label for="foto">Foto:</label>
-  <input type="file" id="foto" name="foto" accept="image/*" required><br>
+    <label for="releasedate">Release Date: </label>
+    <input type="date" id="releasedate" name="releasedate" required>
 
-  <input type="submit" value="Enviar">
-</form>
+    <label for="platform">Platform: </label>
+    <input type="text" id="platform" name="platform" required>
+
+    <label for="foto">Image:</label>
+    <input type="file" id="foto" name="foto" accept="image/*" required>
+
+    <input type="submit" value="Enviar">
+  </form>
 </body>
+
+</html>

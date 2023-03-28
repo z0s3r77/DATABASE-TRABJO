@@ -1,3 +1,5 @@
+
+<!-- TODO ARREGLAR TODO, DOCUMENTAR UN POCO MEJOR Y CORREGIR ERRORES-->
 # Run
 
 Create venv
@@ -10,61 +12,80 @@ Run both scripts, at least DDL to create the database we are using
 
 Run main.py
 
+2 endpoints, insert and get.
+
 ## Descripción de la base de datos
 
-Esta es una base de datos llamada "epicgames", creada con el fin de almacenar información sobre juegos, usuarios, puntajes, compras, desarrolladores, estudios y ventas. A continuación se describen cada una de las tablas:
+This is a database called "epicgames", created to store information about games, users, scores, purchases, developers, studios, and sales. The following are descriptions of each of the tables:
 
-* "Games": esta tabla almacena información sobre los juegos, incluyendo su identificación, nombre, descripción, fecha de lanzamiento, plataforma, imagen y la clave primaria es la identificación.
+* "Games": This table stores information about games, including their ID, name, description, release date, platform, image, and the primary key is the ID.
 
-* "Users": esta tabla almacena información sobre los usuarios de la plataforma de juegos, incluyendo su identificación, nombre de usuario, contraseña, correo electrónico, fecha de registro y la clave primaria es la identificación.
+* "Users": This table stores information about users of the gaming platform, including their ID, username, password, email, registration date, and the primary key is the ID.
 
-* "Scores": esta tabla almacena información sobre los puntajes de los usuarios en cada juego, incluyendo su identificación, la identificación del usuario, la identificación del juego, la puntuación, la fecha y la clave primaria es la identificación. Esta tabla tiene restricciones de clave foránea que vinculan las identificaciones del usuario y del juego a las tablas correspondientes.
+* "Scores": This table stores information about users' scores in each game, including their ID, user ID, game ID, score, date, and the primary key is the ID. This table has foreign key constraints that link the user and game IDs to their corresponding tables.
 
-* "Purchases": esta tabla almacena información sobre las compras de los usuarios, incluyendo su identificación, la identificación del usuario, la identificación del juego, la fecha de compra, el precio y la clave primaria es la identificación. Esta tabla tiene restricciones de clave foránea que vinculan las identificaciones del usuario y del juego a las tablas correspondientes.
+* "Purchases": This table stores information about users' purchases, including their ID, user ID, game ID, purchase date, price, and the primary key is the ID. This table has foreign key constraints that link the user and game IDs to their corresponding tables.
 
-* "Developers": esta tabla almacena información sobre los desarrolladores de juegos, incluyendo su identificación, nombre, descripción, fecha de fundación, ubicación y la clave primaria es la identificación.
+* "Developers": This table stores information about game developers, including their ID, name, description, founding date, location, and the primary key is the ID.
 
-* "Studios": esta tabla almacena información sobre los estudios de juegos, * incluyendo su identificación, nombre, descripción, fecha de fundación, ubicación y la clave primaria es la identificación.
+* "Studios": This table stores information about game studios, including their ID, name, description, founding date, location, and the primary key is the ID.
 
-* "GamesDevelopers": esta tabla es una tabla de enlace que vincula juegos y desarrolladores, incluyendo la identificación del juego y la identificación del desarrollador, y la clave primaria se compone de ambas identificaciones. Esta tabla tiene restricciones de clave foránea que vinculan las identificaciones del usuario y del juego a las tablas correspondientes.
+* "GamesDevelopers": This table is a link table that connects games and developers, including the game ID and developer ID, and the primary key consists of both IDs. This table has foreign key constraints that link the game and developer IDs to their corresponding tables.
 
-* "GamesStudios": esta tabla es una tabla de enlace que vincula juegos y estudios, incluyendo la identificación del juego y la identificación del estudio, y la clave primaria se compone de ambas identificaciones. Esta tabla tiene restricciones de clave foránea que vinculan las identificaciones del usuario y del juego a las tablas correspondientes.
+* "GamesStudios": This table is a link table that connects games and studios, including the game ID and studio ID, and the primary key consists of both IDs. This table has foreign key constraints that link the game and studio IDs to their corresponding tables.
 
-* "Sales": esta tabla almacena información sobre las ventas de juegos, incluyendo su identificación, la identificación del juego, la fecha de venta, la hora de venta, los ingresos y la clave primaria es la identificación. Esta tabla tiene una restricción de clave foránea que vincula la identificación del juego a la tabla correspondiente.
+* "Sales": This table stores information about game sales, including their ID, game ID, sale date, sale time, revenue, and the primary key is the ID. This table has a foreign key constraint that links the game ID to its corresponding table.
 
-La base de datos también tiene dos índices, uno en la tabla "Scores" para las columnas "score" y "user_id", y otro en la tabla "Purchases" para las columnas "user_id", "game_id" y "purchase_date".
+The database also has two indexes, one in the "Scores" table for the "score" and "user_id" columns, and another in the "Purchases" table for the "user_id", "game_id", and "purchase_date" columns.
 
-Además, hay tres roles definidos en la base de datos: "writer", "reader" y "admin_user". "writer" tiene permiso para insertar en la base de datos, "reader" tiene permiso para seleccionar desde la base de datos y "admin_user" tiene todos los permisos.
+In addition, there are three roles defined in the database: "writer", "reader", and "admin_user". "writer" has permission to insert into the database, "reader" has permission to select from the database, and "admin_user" has all permissions.
 
-## Descripción de la app
+## App Description
 
-La app montada en Flask, levanta un pequeño sitio web que permite ingresar datos de un juego y su imagen, y luego mostrarlos en otra página. Esta app se compone de tres archivos:
+The Flask-based app sets up a small website that allows users to enter data about a game and its image, and then display them on another page. This app consists of three files:
 
 ### app.py
 
-* Importa las librerías necesarias
+Imports necessary libraries
 
-* Crea una instancia de la aplicación Flask
+Creates an instance of the Flask application
 
-* Define las rutas y las funciones que se ejecutan en cada una
+Defines routes and functions to be executed on each route
 
-* Muestra un formulario HTML en la ruta raíz
+Displays an HTML form on the root route
 
-* Cuando se envía el formulario, llama a una función que inserta los datos en una base de datos MySQL y redirige a una página de éxito
+When the form is submitted, calls a function that inserts the data into a MySQL database and redirects to a success page
 
-* En otra ruta, muestra los datos de un juego en la base de datos y la imagen correspondiente
+On another route, displays the data of a game in the database and its corresponding image
 
 ### insertSql.py
 
-* Importa las librerías necesarias
+Imports necessary libraries
 
-* Define una función que inserta los datos de un juego en una base de datos MySQL
+Defines a function that inserts game data into a MySQL database
 
 ### getImage.py
 
-* Importa las librerías necesarias
-* Define una función que obtiene los datos y la imagen de un juego en una base de datos MySQL
+Imports necessary libraries
+
+Defines a function that retrieves game data and its image from a MySQL database
 
 ### templates/formulario.html
 
-* Muestra un formulario HTML para ingresar los datos de un juego y una imagen.
+Displays an HTML form for entering game data and an image.
+
+## Sample queries
+
+<!-- TODO PONER QUERIES-->
+
+Queries [here](./scripts/Queries.sql)
+
+![q1](./docs/queries_img/)
+
+![q2](./docs/queries_img/)
+
+![q3](./docs/queries_img/)
+
+![q4](./docs/queries_img/)
+
+![q5](./docs/queries_img/)
