@@ -5,7 +5,8 @@ import io
 
 class Database:
     @staticmethod
-    def insertar_usuario():
+    def connect():
+
         # Crear una conexión a la base de datos
         conexion = mysql.connector.connect(
             host="localhost",
@@ -16,6 +17,12 @@ class Database:
         )
 
         # Crear un cursor para ejecutar las consultas SQL
+        return conexion
+
+    @staticmethod
+    def insertar_usuario():
+
+        conexion = Database.connect()
         cursor = conexion.cursor()
 
         # Obtener los datos del formulario
@@ -45,16 +52,8 @@ class Database:
 
     @staticmethod
     def get_imagen(id):
-        # Crear una conexión a la base de datos
-        conexion = mysql.connector.connect(
-            host="localhost",
-            port=3306,
-            user="admin_user",
-            password="mystrongpass1",
-            database="epicgames",
-        )
 
-        # Crear un cursor para ejecutar las consultas SQL
+        conexion = Database.connect()
         cursor = conexion.cursor()
 
         consulta = "SELECT * FROM Games WHERE id = %s"
