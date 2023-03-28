@@ -25,7 +25,7 @@ def get_imagen(id):
     cursor.close()
     conexion.close()
 
-    # Mostrar los resultados
+    # Obtener los resultados
     if resultado is not None:
 
         id = resultado[0]
@@ -34,8 +34,6 @@ def get_imagen(id):
         release_date = resultado[3]
         platform = resultado[4]
         image = resultado[5]
-        #imagen_bytes = io.BytesIO(image)
-        #return imagen_bytes
         imagen_bytes = io.BytesIO(image)
         return {'id' : id,
                 'name': name,

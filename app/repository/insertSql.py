@@ -2,7 +2,6 @@ import mysql.connector
 from flask import request
 
 
-
 def insertar_usuario():
     # Crear una conexión a la base de datos
     conexion = mysql.connector.connect(
@@ -29,7 +28,7 @@ def insertar_usuario():
 
     # Crear la consulta SQL para insertar los datos en la tabla de usuarios
     consulta = "INSERT INTO Games (id, name, description, release_date, platform, image) VALUES (%s, %s, %s, %s, %s, %s)"
-    valores = ( id, name, description, releasedate, platform, bytes_imagen)
+    valores = (id, name, description, releasedate, platform, bytes_imagen)
 
     # Ejecutar la consulta y confirmar los cambios
     cursor.execute(consulta, valores)
@@ -38,6 +37,6 @@ def insertar_usuario():
     # Cerrar el cursor
     cursor.close()
 
+    # Cerrar la conexión a la base de datos
     conexion.close()
 
-# Cerrar la conexión a la base de datos
