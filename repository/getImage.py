@@ -5,7 +5,11 @@ import io
 def get_imagen(id):
     # Crear una conexión a la base de datos
     conexion = mysql.connector.connect(
-        host="localhost", port=3306, user="root", password="0909", database="epicgames"
+        host="localhost",
+        port=3306,
+        user="admin_user",
+        password="mystrongpass1",
+        database="epicgames",
     )
 
     # Crear un cursor para ejecutar las consultas SQL

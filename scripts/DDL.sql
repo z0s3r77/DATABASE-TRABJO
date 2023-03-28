@@ -109,7 +109,7 @@ GRANT SELECT ON epicgames.* TO 'reader';
 -- CREATE USERS 
 
 DROP USER IF EXISTS 'admin_user'@'localhost' ;
-CREATE USER 'admin_user'@'localhost' IDENTIFIED BY 'mystrongpass1';
+CREATE USER 'admin_user'@'%' IDENTIFIED BY 'mystrongpass1';
 
 DROP USER IF EXISTS 'writer_user'@'localhost' ;
 CREATE USER 'writer_user'@'localhost' IDENTIFIED BY 'mystrongpass2';
@@ -120,7 +120,7 @@ CREATE USER 'reader_user'@'localhost' IDENTIFIED BY 'mystrongpass3';
 
 -- ASIGN ROLE TO USER
 
-GRANT ALL PRIVILEGES ON *.* TO 'admin_user'@'localhost' WITH GRANT OPTION;
+GRANT ALL PRIVILEGES ON *.* TO 'admin_user'@'%' WITH GRANT OPTION;
 
 GRANT 'writer' TO 'writer_user'@'localhost';
 
