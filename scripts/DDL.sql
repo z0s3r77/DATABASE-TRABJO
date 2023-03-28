@@ -12,7 +12,7 @@ CREATE TABLE Games (
 	description VARCHAR(60),
 	release_date DATE,
 	platform VARCHAR(60) CHECK (platform in ('NES','Nintendo 64','Xbox 360','PlayStation 3','PC','Xbox One','PlayStation 4','Nintendo Switch')),
-	image BLOB,
+	image MEDIUMBLOB,
 	PRIMARY KEY (id) 
 );
 
