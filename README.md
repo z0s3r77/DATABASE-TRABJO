@@ -89,3 +89,5 @@ Queries [here](./scripts/Queries.sql)
 ![q4](./docs/queries_img/)
 
 ![q5](./docs/queries_img/)
+
+<!-- TODO AÑADIR EJEMPLOS DE COM0 FUCIONAN LOS USUARIOS, POR EJEMPLO. CON ADMIN PODEMOS HACER TODO, PERO CON EL REST0 NO-->

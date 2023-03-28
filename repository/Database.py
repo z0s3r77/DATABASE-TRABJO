@@ -15,6 +15,20 @@ class Database:
             password="mystrongpass1",
             database="epicgames",
         )
+        # conexion = mysql.connector.connect(
+        #     host="localhost",
+        #     port=3306,
+        #     user="writer_user",
+        #     password="mystrongpass2",
+        #     database="epicgames",
+        # )
+        # conexion = mysql.connector.connect(
+        #     host="localhost",
+        #     port=3306,
+        #     user="reader_user",
+        #     password="mystrongpass3",
+        #     database="epicgames",
+        # )
 
         return conexion
 

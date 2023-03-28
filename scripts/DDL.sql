@@ -102,29 +102,33 @@ DROP ROLE IF EXISTS 'writer' ;
 CREATE ROLE 'writer';
 GRANT INSERT ON epicgames.* TO 'writer';
 
+
 DROP ROLE IF EXISTS 'reader' ;
 CREATE ROLE 'reader';
 GRANT SELECT ON epicgames.* TO 'reader';
 
+
 -- CREATE USERS 
 
-DROP USER IF EXISTS 'admin_user'@'localhost' ;
+DROP USER IF EXISTS 'admin_user'@'%' ;
 CREATE USER 'admin_user'@'%' IDENTIFIED BY 'mystrongpass1';
 
-DROP USER IF EXISTS 'writer_user'@'localhost' ;
-CREATE USER 'writer_user'@'localhost' IDENTIFIED BY 'mystrongpass2';
+DROP USER IF EXISTS 'writer_user'@'%' ;
+CREATE USER 'writer_user'@'%' IDENTIFIED BY 'mystrongpass2';
 
-DROP USER IF EXISTS 'reader_user'@'localhost' ;
-CREATE USER 'reader_user'@'localhost' IDENTIFIED BY 'mystrongpass3';
+DROP USER IF EXISTS 'reader_user'@'%' ;
+CREATE USER 'reader_user'@'%' IDENTIFIED BY 'mystrongpass3';
 
 
 -- ASIGN ROLE TO USER
 
 GRANT ALL PRIVILEGES ON *.* TO 'admin_user'@'%' WITH GRANT OPTION;
 
-GRANT 'writer' TO 'writer_user'@'localhost';
+REVOKE ALL PRIVILEGES ON *.* FROM 'writer_user'@'%';
+GRANT INSERT ON epicgames.* TO 'writer_user'@'%';
 
-GRANT 'reader' TO 'reader_user'@'localhost';
+REVOKE ALL PRIVILEGES ON *.* FROM 'reader_user'@'%';
+GRANT SELECT ON epicgames.*  TO 'reader_user'@'%';
 
 -- TO GRANT AN EXTERNAL USER AND ALL PRIVILEGES
 
