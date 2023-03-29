@@ -63,7 +63,7 @@ WITH CTE_UsersScoresGamesPurchases as (
 SELECT username, name
 FROM CTE_UsersScoresGamesPurchases
 WHERE purchase_date < @today
-AND score >= 50
+AND score >= 50;
 
 +----------+--------------------------------------+
 | username | name                                 |
@@ -74,6 +74,7 @@ AND score >= 50
 -- ALL EARNINGS
 
 SELECT SUM(price * 0.9) as Earnings FROM Purchases;
+
 +----------+
 | Earnings |
 +----------+
