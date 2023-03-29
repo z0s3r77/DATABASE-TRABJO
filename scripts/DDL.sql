@@ -49,6 +49,16 @@ CREATE TABLE Purchases (
 	FOREIGN KEY (game_id) REFERENCES Games(id) ON DELETE SET NULL ON UPDATE SET NULL
 );
 
+CREATE TABLE Studios (
+	id INT ,
+	name VARCHAR(60),
+	description VARCHAR(200),
+	foundation_date DATE,
+	location VARCHAR(60),
+	PRIMARY KEY (id) 
+);
+
+
 CREATE TABLE Developers (
 	id INT,
 	name VARCHAR(60),
@@ -59,14 +69,6 @@ CREATE TABLE Developers (
 	FOREIGN KEY (studio_id) REFERENCES Studios(id) ON DELETE CASCADE ON UPDATE CASCADE
 );
 
-CREATE TABLE Studios (
-	id INT ,
-	name VARCHAR(60),
-	description VARCHAR(200),
-	foundation_date DATE,
-	location VARCHAR(60),
-	PRIMARY KEY (id) 
-);
 
 CREATE TABLE GamesDevelopers (
 	game_id INT,
