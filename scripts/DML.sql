@@ -68,24 +68,6 @@ VALUES (4,4, 2, '2022-04-10', 49.99);
 INSERT INTO Purchases (id, user_id, game_id, purchase_date, price)
 VALUES (5,5, 3, '2022-05-05', 29.99);
 
-
--- Developers table
-
-INSERT INTO Developers (id, name, surname, studio, age)
-VALUES 
-(1, 'John', 'Smith', 5, 28),
-(2, 'Alice'	,'Johnson',	3	,35),
-(3,'Peter','Rodriguez'	,4,	41 ),
-(4, 'Sarah',	'Lee',	2,	26),
-(5, 'Rachel',	'Chen',	2,	29),
-(7,	'Michael'	,'Brown',2,	38),
-(8,	'Jennifer',	'Davis',	5,	31),
-(9, 'Abel', 'Casas', 1, 18),
-(10, 'Isaac', 'Clarke', 5, 23),
-(11, 'Manu','Manolo',5,33),
-(12, 'Sebastian','Estacio', 5, 16),
-(13, 'Amin', 'Grande',5, 30);
-
 -- Studios table
 
 INSERT INTO Studios (id, name, description, foundation_date, location)
@@ -95,6 +77,25 @@ VALUES
 (3, 'Square Enix', 'A Japanese video game developer, publisher, and distribution company', '1975-09-22', 'Tokyo, Japan'),
 (4, 'Electronic Arts', 'An American video game company that develops and publishes games', '1982-05-28', 'Redwood City, California'),
 (5, 'Capcom', 'A Japanese video game developer and publisher', '1979-06-11', 'Osaka, Japan');
+
+-- Developers table
+
+INSERT INTO Developers (id, name, surname, studio_id, age)
+VALUES 
+(1, 'John', 'Smith', 5, 28),
+(2, 'Alice'	,'Johnson',	3	,35),
+(3,'Peter','Rodriguez'	,4,	41 ),
+(4, 'Sarah',	'Lee',	2,	26),
+(5, 'Rachel',	'Chen',	2,	29),
+(6, 'jose', 'Chelu',2, 50),
+(7,	'Michael'	,'Brown',2,	38),
+(8,	'Jennifer',	'Davis',	5,	31),
+(9, 'Abel', 'Casas', 1, 18),
+(10, 'Isaac', 'Clarke', 5, 23),
+(11, 'Manu','Manolo',5,33),
+(12, 'Sebastian','Estacio', 5, 16),
+(13, 'Amin', 'Grande',5, 30);
+
 
 
 -- GamesDevelopers table
