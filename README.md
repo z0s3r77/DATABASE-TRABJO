@@ -1,20 +1,26 @@
-
-<!-- TODO ARREGLAR TODO, DOCUMENTAR UN POCO MEJOR Y CORREGIR ERRORES-->
 # Run
 
-Create venv
+* Create virtual enviroment and go into
 
-Install requirements
+```cmd
+python -m venv venv
 
-Have a local MySQL server running
+\venv\Scripts\activate
+```
 
-Run both scripts, at least DDL to create the database we are using
+* Install requirements
 
-Run main.py
+```cmd
+pip install -r requirements
+```
 
-2 endpoints, insert and get.
+* Have a local MySQL server running
 
-## Descripción de la base de datos
+* Run both scripts, at least DDL to create the database we are using.
+
+* Run main.py
+
+## Database description
 
 This is a database called "epicgames", created to store information about games, users, scores, purchases, developers, studios, and sales. The following are descriptions of each of the tables:
 
@@ -73,23 +79,3 @@ Defines a function that retrieves game data and its image from a MySQL database
 ### templates/formulario.html
 
 Displays an HTML form for entering game data and an image.
-
-## Sample queries
-
-<!-- TODO PONER QUERIES-->
-
-Queries [here](./scripts/Queries.sql)
-
-![q1](./docs/queries_img/)
-
-![q2](./docs/queries_img/)
-
-![q3](./docs/queries_img/)
-
-![q4](./docs/queries_img/)
-
-![q5](./docs/queries_img/)
-
-<!-- TODO AÑADIR EJEMPLOS DE COM0 FUCIONAN LOS USUARIOS, POR EJEMPLO. CON ADMIN PODEMOS HACER TODO, PERO CON EL REST0 NO-->
-
-FALTAN QUERIES Y DEJAR BONITO EL README.
