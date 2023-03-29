@@ -52,10 +52,11 @@ CREATE TABLE Purchases (
 CREATE TABLE Developers (
 	id INT,
 	name VARCHAR(60),
-	description VARCHAR(200),
-	foundation_date DATE,
-	location VARCHAR(60),
-	PRIMARY KEY (id) 
+	surname VARCHAR(60),
+	studio_id INT,
+	age INT,
+	PRIMARY KEY (id) ,
+	FOREIGN KEY (studio_id) REFERENCES Studios(id) ON DELETE CASCADE ON UPDATE CASCADE
 );
 
 CREATE TABLE Studios (
