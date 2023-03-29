@@ -1,5 +1,7 @@
 
 -- Create DATABASE
+
+DROP DATABASE IF EXISTS epicgames;
 CREATE DATABASE epicgames;
 
 -- Use Database
