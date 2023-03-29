@@ -15,6 +15,9 @@ VALUES (4, 'Minecraft', 'A sandbox survival game', '2011-11-18', 'PC');
 INSERT INTO Games (id, name, description, release_date, platform)
 VALUES (5, 'Fortnite', 'A popular battle royale game', '2017-07-25', 'PlayStation 4');
 
+INSERT INTO Games (id, name, description, release_date, platform)
+VALUES (6, 'Resident Evil 4 remake', 'A popular zombie Games', '2017-07-25', 'PlayStation 4');
+
 
 -- Users table
 
@@ -68,14 +71,20 @@ VALUES (5,5, 3, '2022-05-05', 29.99);
 
 -- Developers table
 
-INSERT INTO Developers (id, name, description, foundation_date, location)
+INSERT INTO Developers (id, name, surname, studio, age)
 VALUES 
-(1, 'Rockstar North', 'A Scottish video game developer and a studio of Rockstar Games', '1988-01-01', 'Edinburgh, Scotland'),
-(2, 'Naughty Dog', 'An American video game developer that creates games exclusively for PlayStation consoles', '1984-01-01', 'Santa Monica, California'),
-(3, 'Valve Corporation', 'An American video game developer, publisher, and digital distribution company', '1996-01-01', 'Bellevue, Washington'),
-(4, 'CD Projekt Red', 'A Polish video game developer, publisher, and distributor', '1994-01-01', 'Warsaw, Poland'),
-(5, 'Ubisoft Montreal', 'A Canadian video game developer and a subsidiary of Ubisoft', '1997-01-01', 'Montreal, Canada');
-
+(1, 'John', 'Smith', 'Capcom', 28),
+(2, 'Alice'	,'Johnson',	'Square Enix'	,35),
+(3,'Peter','Rodriguez'	,'Electronic Arts',	41 ),
+(4, 'Sarah',	'Lee',	'Nintendo EPD',	26),
+(5, 'Rachel',	'Chen',	'Nintendo EPD',	29),
+(7,	'Michael'	,'Brown',	'Electronic Arts',	38),
+(8,	'Jennifer',	'Davis',	'Capcom',	31),
+(9, 'Abel', 'Casas', 'Blizzard Entertainment', 18),
+(10, 'Isaac', 'Clarke', 'Capcom', 23),
+(11, 'Manu','Manolo','Capcom',33),
+(12, 'Sebastian','Estacio', 'Capcom', 16),
+(13, 'Amin', 'Grande','Capcom', 30);
 
 -- Studios table
 
@@ -96,7 +105,13 @@ VALUES
 (2, 2),
 (3, 3),
 (4, 4),
-(5, 5);
+(5, 5),
+(6, 1),
+(6, 8),
+(6, 10),
+(6, 11),
+(6, 12),
+(6, 13);
 
 -- GamesStudios table
 
