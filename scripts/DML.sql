@@ -67,6 +67,8 @@ INSERT INTO Purchases (id, user_id, game_id, purchase_date, price)
 VALUES (4,4, 2, '2022-04-10', 49.99);
 INSERT INTO Purchases (id, user_id, game_id, purchase_date, price)
 VALUES (5,5, 3, '2022-05-05', 29.99);
+INSERT INTO Purchases (id, user_id, game_id, purchase_date, price)
+VALUES (6,3, 6, '2022-03-31', 89.99);
 
 -- Studios table
 
