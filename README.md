@@ -1,3 +1,5 @@
+![er](./docs/ER_diagram.png)
+
 # Run
 
 * Create virtual enviroment and go into
