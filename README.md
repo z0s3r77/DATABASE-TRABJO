@@ -50,7 +50,7 @@ In addition, there are three roles defined in the database: "writer", "reader", 
 
 The Flask-based app sets up a small website that allows users to enter data about a game and its image, and then display them on another page. This app consists of three files:
 
-### app.py
+### Main.py
 
 Imports necessary libraries
 
@@ -64,15 +64,11 @@ When the form is submitted, calls a function that inserts the data into a MySQL 
 
 On another route, displays the data of a game in the database and its corresponding image
 
-### insertSql.py
+### Database.py
 
 Imports necessary libraries
 
 Defines a function that inserts game data into a MySQL database
-
-### getImage.py
-
-Imports necessary libraries
 
 Defines a function that retrieves game data and its image from a MySQL database
 
